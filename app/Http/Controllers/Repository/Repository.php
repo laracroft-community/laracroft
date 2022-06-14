@@ -82,6 +82,10 @@ class Repository implements IRepository
      * with_relation or with_relation1__relation2
      * 
      * withCount_relation
+     * 
+     * withSum
+     * 
+     * withCount
      *  
      * @param Request $request
      * @return Builder $query
