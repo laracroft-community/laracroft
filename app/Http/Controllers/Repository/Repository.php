@@ -83,9 +83,9 @@ class Repository implements IRepository
      * 
      * withCount_relation
      * 
-     * withSum
+     * withSum_column/withSum_relation_column
      * 
-     * withCount
+     * withCount_column
      *  
      * @param Request $request
      * @return Builder $query
@@ -283,10 +283,10 @@ class Repository implements IRepository
                         $tempData->save();
                     } else {
                         // hasMany type relation
-                        if ($request->has('withDestroyRelationModel') && $request->get('withDestroyRelationModel') === true) {
+                        // if ($request->has('withDestroyRelationModel') && $request->get('withDestroyRelationModel') === true) {
                             $deletedIds = $this->getDeletedIds($relationData, $relationModel->getKeyName(), $relationModel);
                             $relationModel::destroy($deletedIds);
-                        }
+                        // }
                         
                         foreach ($relationData as $relationValue) {
 
