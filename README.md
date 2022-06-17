@@ -55,7 +55,21 @@ class ExampleController extends Controller
 }
 ```
 
-Override following methods in your controllers with your own logic to process your requests.
+Finally, open file `/routes/api.php` and use `createRoute()` function to register API routes.
+```
+createRoute(
+        [
+            'example_route_prefix_name',
+            ...
+        ],
+        [
+            ExampleController::class,
+            ...
+        ]
+    );
+```
+
+Optionally, override following methods in your controllers if you want to code your own logic to process your requests.
 
 ```
     /**
@@ -94,20 +108,6 @@ Override following methods in your controllers with your own logic to process yo
      * @param int $id
      */
     public function delete($id) {}
-```
-
-Finally, open file `/routes/api.php` and use `createRoute()` function to register API routes.
-```
-createRoute(
-        [
-            'example_route_prefix_name',
-            ...
-        ],
-        [
-            ExampleController::class,
-            ...
-        ]
-    );
 ```
 
 ## How to use
