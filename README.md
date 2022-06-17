@@ -55,6 +55,47 @@ class ExampleController extends Controller
 }
 ```
 
+Override following methods in your controllers with your own logic to process your requests.
+
+```
+    /**
+     * List resource
+     * 
+     * @param Request $request
+     */
+    public function index(Request $request, $id = null) {}
+
+    /**
+     * List single resource
+     * 
+     * @param Request $request
+     * @param int $id
+     */
+    public function show(Request $request, $id) {}
+
+    /**
+     * Store resource
+     * 
+     * @param Request $request
+     */
+    public function store(Request $request) {}
+
+    /**
+     * Update resource
+     *  
+     * @param Request $request
+     * @param int $id
+     */
+    public function update(Request $request, $id) {}
+
+    /**
+     * Delete resource
+     * 
+     * @param int $id
+     */
+    public function delete($id) {}
+```
+
 Finally, open file `/routes/api.php` and use `createRoute()` function to register API routes.
 ```
 createRoute(
@@ -108,10 +149,10 @@ To insert/update a new record into a table at the same time as related table(s) 
 Add these query parameters when making request to your API route with `GET` method.
 | Query parameter | Description | Value |
 | --- | --- | --- |
-| `order` | ascending or descending order in which to sort the result set | `asc`, `desc` |
+| `order` | ascending or descending order in which to sort the result set | `asc, desc` |
 | `by` | the column to sort the result set by | `column name` |
-| `where_column`,`whereLike_column`,`whereLike_relation__column` | extract only those records that fulfill a specified condition | eg: `where_lastname=bob`,`whereLike_adress=anov`,`whereLike_city__name=exico` |
-| `orWhere_column`,`orWhereLike_column` | combine with above query parameters to filter the result set | eg: `orWhere_lastname=bob`,`orWhereLike_adress=anov` |
-| `with_relation`,`with_relation1__relation2` | retrieve the result set with the relationships and those that are nested | eg: `with_customer`,`with_employees__department` |
-| `withSum_column`,`withSum_relation_column` | retrieve the result set with total sum of a column | eg: `withSum_salary`,`withSum_transfers_amount` |
+| `where_column, whereLike_column, whereLike_relation__column` | extract only those records that fulfill a specified condition | eg: `where_lastname=bob, whereLike_adress=anov, whereLike_city__name=exico` |
+| `orWhere_column, orWhereLike_column` | combine with above query parameters to filter the result set | eg: `orWhere_lastname=bob, orWhereLike_adress=anov` |
+| `with_relation, with_relation1__relation2` | retrieve the result set with the relationships and those that are nested | eg: `with_customer, with_employees__department` |
+| `withSum_column, withSum_relation_column` | retrieve the result set with total sum of a column | eg: `withSum_salary, withSum_transfers_amount` |
 | `withCount_column` | retrieve the result set with number of records | eg: `withCount_id` |
