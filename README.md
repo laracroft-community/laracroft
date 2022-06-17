@@ -156,3 +156,26 @@ Add these query parameters when making request to your API route with `GET` meth
 | `with_relation, with_relation1__relation2` | retrieve the result set with the relationships and those that are nested | eg: `with_customer, with_employees__department` |
 | `withSum_column, withSum_relation_column` | retrieve the result set with total sum of a column | eg: `withSum_salary, withSum_transfers_amount` |
 | `withCount_column` | retrieve the result set with number of records | eg: `withCount_id` |
+
+## API response
+
+API response is in json format with some useful informations for each request.
+```
+{
+    success: true,
+    code: 200,
+    body: [
+        error_message: null,
+        errors: null,
+        response_data: data
+    ]
+}
+```
+
+| Key | Description | Type |
+| --- | --- | --- |
+| `success` | success of API processing | `Boolean` |
+| `code` | HTTP status codes | `Integer` |
+| `error_message` | message of occurred error | `String` |
+| `errors` | list of occurred errors | `Array` |
+| `response_data` | resources or model requested | `Array`, `Object` |
