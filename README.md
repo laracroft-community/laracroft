@@ -1,24 +1,30 @@
-# Our custom Laravel tool to code very quickly an API.
+<h1 align="center">
+Laracroft
+</h1>
+<div align="center">
 
-## Prerequisites
+An Laravel tool to code very quickly an API.
+</div>
+
+# Prerequisites
 
 * [PHP ^7.3|^8.0](https://www.php.net/downloads.php)
 * [Laravel framework ^8.65](https://laravel.com/docs/8.x)
 
-## Installation
+# Installation
 
 Install packages with [Composer](https://getcomposer.org/).
 Just run the following:
 > composer install
 
-### Database configuration
+## Database configuration
 
 Edit database environment variables in `.env` file and run the following command:
 > php artisan migrate
 
 Use [migrations](https://laravel.com/docs/8.x/migrations) to define database schema.
 
-### API authentication
+## API authentication
 
 Laravel Passport is an OAuth2 server and API authentication package that is simple and enjoyable to use. Run the following commands to install and configure the package:
 ```
@@ -35,7 +41,7 @@ PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET=tyQWXh7c6CsWj6p5jHEgxlfhyypOdKsIQIieicBh
 
 > php artisan db:seed
 
-## Quick Start and examples
+# Quick Start and examples
 
 Use [Eloquent](https://laravel.com/docs/8.x/eloquent) to create models corresponding to each database table.
 
@@ -110,7 +116,7 @@ Optionally, override following methods in your controllers if you want to code y
     public function delete($id) {}
 ```
 
-## How to use
+# How to use
 
 Run `/api/login` with `POST` method to get token and set it to each request header. Your request body:
 ```
@@ -157,7 +163,7 @@ Add these query parameters when making request to your API route with `GET` meth
 | `withSum_column, withSum_relation_column` | retrieve the result set with total sum of a column | eg: `withSum_salary, withSum_transfers_amount` |
 | `withCount_column` | retrieve the result set with number of records | eg: `withCount_id` |
 
-## API response
+# API response
 
 API response is in json format with some useful informations for each request.
 ```
