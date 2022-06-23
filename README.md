@@ -41,6 +41,12 @@ PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET=tyQWXh7c6CsWj6p5jHEgxlfhyypOdKsIQIieicBh
 
 > php artisan db:seed
 
+This command will add a sample user with the following information to your database:
+
+* Name: bob
+* Email: bob@bob.bob
+* Password: 123456
+
 # Quick Start and examples
 
 Use [Eloquent](https://laravel.com/docs/8.x/eloquent) to create models corresponding to each database table.
